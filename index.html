@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to PySmartDL’s documentation! &mdash; pySmartDL 1.0.0 documentation</title>
+    <title>Python Smart Download Manager – pySmartDL &mdash; pySmartDL 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -48,10 +48,30 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="welcome-to-pysmartdl-s-documentation">
-<h1>Welcome to PySmartDL&#8217;s documentation!<a class="headerlink" href="#welcome-to-pysmartdl-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p><tt class="docutils literal"><span class="pre">pySmartDL</span></tt> strives to be a full-pleged smart download manager for Python.
-Typical usage often looks like this:</p>
+  <div class="section" id="python-smart-download-manager-pysmartdl">
+<h1>Python Smart Download Manager &#8211; pySmartDL<a class="headerlink" href="#python-smart-download-manager-pysmartdl" title="Permalink to this headline">¶</a></h1>
+<p><tt class="docutils literal"><span class="pre">pySmartDL</span></tt> strives to be a full-pleged smart download manager for Python. Main features:</p>
+<ul class="simple">
+<li>Built-in download acceleration (with the <a class="reference external" href="http://stackoverflow.com/questions/93642/how-do-download-accelerators-work">multipart downloading technique</a>).</li>
+<li>Mirrors support.</li>
+<li>Pause/Unpause feature.</li>
+<li>Hash checking.</li>
+<li>Non-blocking, shows progress bar, download speed and eta.</li>
+</ul>
+<div class="section" id="project-links">
+<h2>Project Links<a class="headerlink" href="#project-links" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Downloads: <a class="reference external" href="http://pypi.python.org/pypi/pySmartDL/">http://pypi.python.org/pypi/pySmartDL/</a></li>
+<li>Documentation: <a class="reference external" href="http://itaybb.github.io/pySmartDL/">http://itaybb.github.io/pySmartDL/</a></li>
+<li>Project page: <a class="reference external" href="https://github.com/iTaybb/pySmartDL/">https://github.com/iTaybb/pySmartDL/</a></li>
+<li>Bugs and Issues: <a class="reference external" href="https://github.com/iTaybb/pySmartDL/issues">https://github.com/iTaybb/pySmartDL/issues</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Download is as simple as creating an instance and launching it:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">pySmartDL</span> <span class="kn">import</span> <span class="n">SmartDL</span>
 
@@ -66,33 +86,16 @@ Typical usage often looks like this:</p>
 <span class="n">os</span><span class="o">.</span><span class="n">startfile</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get_dest</span><span class="p">())</span> <span class="c"># get_dest() returns the destination of the downloaded file.</span>
 </pre></div>
 </div>
-<div class="section" id="main-features">
-<h2>Main Features<a class="headerlink" href="#main-features" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Built-in download acceleration (with the <a class="reference external" href="http://stackoverflow.com/questions/93642/how-do-download-accelerators-work">multipart downloading technique</a>).</li>
-<li>Mirrors support.</li>
-<li>Pause/Unpause feature.</li>
-<li>Hash checking.</li>
-<li>Non-blocking, shows progress bar, download speed and eta.</li>
-</ul>
 </div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<p>PySmartDL works with Python 2.7. The <a class="reference external" href="https://pypi.python.org/pypi/threadpool">threadpool</a> module needs to be installed before first running pySmartDL.</p>
-</div>
-<div class="section" id="faq">
-<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
-<p>Q: How do I make a feature request?
-A: Mail me your ideas and also don&#8217;t forget to tell me the benefits.</p>
-<p>Q: I found a bug. How should I report it?
-A: Mail me the details.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>Try to give as many details as possible, especially describe the necessary
-steps to reproduce the bug.</div></blockquote>
-<p>Q: How can I access the source code?
-A: You&#8217;re more than welcome to visit our github repository: <a class="reference external" href="https://github.com/iTaybb/pySmartDL">https://github.com/iTaybb/pySmartDL</a></p>
+<div><ul class="simple">
+<li>Python 2.7.</li>
+<li>The <a class="reference external" href="https://pypi.python.org/pypi/threadpool">threadpool</a> package.</li>
+</ul>
+</div></blockquote>
 </div>
-<p>A: You&#8217;re more than welcome to visit our github repository: <a class="reference external" href="https://github.com/iTaybb/pySmartDL">https://github.com/iTaybb/pySmartDL</a></p>
 </div>
 <div class="section" id="documentation">
 <h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
@@ -152,10 +155,10 @@ A: You&#8217;re more than welcome to visit our github repository: <a class="refe
 			</script></p>
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to PySmartDL&#8217;s documentation!</a><ul>
-<li><a class="reference internal" href="#main-features">Main Features</a></li>
-<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li><a class="reference internal" href="#faq">FAQ</a></li>
+<li><a class="reference internal" href="#">Python Smart Download Manager &#8211; pySmartDL</a><ul>
+<li><a class="reference internal" href="#project-links">Project Links</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#documentation">Documentation</a><ul>
