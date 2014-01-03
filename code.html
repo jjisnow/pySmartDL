@@ -158,7 +158,7 @@ passing hash verification, HashFailedException() Exception will be raised.</p>
 
 <dl class="method">
 <dt id="pySmartDL.SmartDL.get_eta">
-<tt class="descname">get_eta</tt><big>(</big><em>human=True</em><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_eta" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_eta</tt><big>(</big><em>human=False</em><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_eta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get estimated time of download completion, in seconds. Returns <cite>0</cite> if there is
 no enough data to calculate the estimated time (this will happen on the approx.
 first 5 seconds of each download).</p>
@@ -168,7 +168,7 @@ first 5 seconds of each download).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>human</strong> (<em>bool</em>) &#8211; If true, returns a human-readable formatted string. Else, returns an int type number</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int/string</td>
 </tr>
 </tbody>
 </table>
