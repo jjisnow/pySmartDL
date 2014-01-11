@@ -85,7 +85,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>urls</strong> (<em>string or list of strings</em>) &#8211; Download url. You can also pass a list of urls, and those will be used as mirrors.</li>
+<li><strong>urls</strong> (<em>string or list of strings</em>) &#8211; Download url. It is possible to pass unsafe and unicode characters. You can also pass a list of urls, and those will be used as mirrors.</li>
 <li><strong>dest</strong> (<em>string</em>) &#8211; Destination path. Default is <cite>%TEMP%/pySmartDL/</cite>.</li>
 <li><strong>progress_bar</strong> (<em>bool</em>) &#8211; If True, prints a progress bar to the <a class="reference external" href="http://docs.python.org/2/library/sys.html#sys.stdout">stdout stream</a>. Default is <cite>True</cite>.</li>
 <li><strong>logger</strong> (<cite>logging.Logger</cite> instance) &#8211; An optional logger.</li>
@@ -113,7 +113,7 @@
 <tt class="descname">add_hash_verification</tt><big>(</big><em>algorithm</em>, <em>hash</em><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.add_hash_verification" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds hash verification to the download.</p>
 <p>If hash is not correct, will try different mirrors. If all mirrors aren&#8217;t
-passing hash verification, HashFailedException() Exception will be raised.</p>
+passing hash verification, <cite>HashFailedException</cite> Exception will be raised.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If downloaded file already exist on the destination, and hash matches, pySmartDL will not download it again.</p>
@@ -158,7 +158,7 @@ passing hash verification, HashFailedException() Exception will be raised.</p>
 
 <dl class="method">
 <dt id="pySmartDL.SmartDL.get_eta">
-<tt class="descname">get_eta</tt><big>(</big><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_eta" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_eta</tt><big>(</big><em>human=False</em><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_eta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get estimated time of download completion, in seconds. Returns <cite>0</cite> if there is
 no enough data to calculate the estimated time (this will happen on the approx.
 first 5 seconds of each download).</p>
@@ -166,7 +166,9 @@ first 5 seconds of each download).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>human</strong> (<em>bool</em>) &#8211; If true, returns a human-readable formatted string. Else, returns an int type number</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int/string</td>
 </tr>
 </tbody>
 </table>
@@ -174,13 +176,15 @@ first 5 seconds of each download).</p>
 
 <dl class="method">
 <dt id="pySmartDL.SmartDL.get_speed">
-<tt class="descname">get_speed</tt><big>(</big><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_speed" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_speed</tt><big>(</big><em>human=False</em><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_speed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get current transfer speed in bytes per second.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>human</strong> (<em>bool</em>) &#8211; If true, returns a human-readable formatted string. Else, returns an int type number</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int/string</td>
 </tr>
 </tbody>
 </table>
@@ -334,14 +338,16 @@ destination is provided to the class, and exists on a temp folder.</p>
 
 <dl class="method">
 <dt id="pySmartDL.SmartDL.get_dl_time">
-<tt class="descname">get_dl_time</tt><big>(</big><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_dl_time" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_dl_time</tt><big>(</big><em>human=False</em><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_dl_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns how much time did the download take, in seconds. Returns
 <cite>-1</cite> if the download task is not finished yet.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>human</strong> (<em>bool</em>) &#8211; If true, returns a human-readable formatted string. Else, returns an int type number</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int/string</td>
 </tr>
 </tbody>
 </table>
@@ -349,13 +355,15 @@ destination is provided to the class, and exists on a temp folder.</p>
 
 <dl class="method">
 <dt id="pySmartDL.SmartDL.get_dl_size">
-<tt class="descname">get_dl_size</tt><big>(</big><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_dl_size" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_dl_size</tt><big>(</big><em>human=False</em><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_dl_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get downloaded bytes counter in bytes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>human</strong> (<em>bool</em>) &#8211; If true, returns a human-readable formatted string. Else, returns an int type number</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int/string</td>
 </tr>
 </tbody>
 </table>
@@ -477,7 +485,7 @@ called when the download task is not finished yet.</p>
 URL because it contains unsafe characters like &#8216; &#8216; and so on.  This
 function can fix some of the problems in a similar way browsers
 handle data entered by the user:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">url_fix</span><span class="p">(</span><span class="s">u&#39;http://de.wikipedia.org/wiki/Elf (Begriffskl?rung)&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">url_fix</span><span class="p">(</span><span class="s">u&#39;http://de.wikipedia.org/wiki/Elf (Begriffsklärung)&#39;</span><span class="p">)</span>
 <span class="go">&#39;http://de.wikipedia.org/wiki/Elf%20%28Begriffskl%C3%A4rung%29&#39;</span>
 </pre></div>
 </div>
@@ -575,14 +583,61 @@ using the Range HTTP request header and the Accept-Ranges and Content-Range HTTP
 <dt id="pySmartDL.utils.get_random_useragent">
 <tt class="descclassname">pySmartDL.utils.</tt><tt class="descname">get_random_useragent</tt><big>(</big><big>)</big><a class="headerlink" href="#pySmartDL.utils.get_random_useragent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a random popular user-agent.
-Taken from &lt;<a class="reference external" href="http://techblog.willshouse.com/2012/01/03/most-common-user-agents/">http://techblog.willshouse.com/2012/01/03/most-common-user-agents/</a>&gt;_, last updated on 01/01/2014.</p>
+Taken from <a class="reference external" href="http://techblog.willshouse.com/2012/01/03/most-common-user-agents/">here</a>, last updated on 01/01/2014.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">user-agent</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pySmartDL.utils.sizeof_human">
+<tt class="descclassname">pySmartDL.utils.</tt><tt class="descname">sizeof_human</tt><big>(</big><em>num</em><big>)</big><a class="headerlink" href="#pySmartDL.utils.sizeof_human" title="Permalink to this definition">¶</a></dt>
+<dd><p>Human-readable formatting for filesizes. Taken from <a class="reference external" href="http://stackoverflow.com/questions/1094841/reusable-library-to-get-human-readable-version-of-file-size">here</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sizeof_human</span><span class="p">(</span><span class="mi">175799789</span><span class="p">)</span>
+<span class="go">&#39;167.7 MB&#39;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong> (<em>int</em>) &#8211; Size in bytes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pySmartDL.utils.time_human">
+<tt class="descclassname">pySmartDL.utils.</tt><tt class="descname">time_human</tt><big>(</big><em>duration</em>, <em>fmt_short=False</em><big>)</big><a class="headerlink" href="#pySmartDL.utils.time_human" title="Permalink to this definition">¶</a></dt>
+<dd><p>Human-readable formatting for timing. Based on code from <a class="reference external" href="http://stackoverflow.com/questions/6574329/how-can-i-produce-a-human-readable-difference-when-subtracting-two-unix-timestam">here</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">time_human</span><span class="p">(</span><span class="mi">175799789</span><span class="p">)</span>
+<span class="go">&#39;6 years, 2 weeks, 4 days, 17 hours, 16 minutes, 29 seconds&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time_human</span><span class="p">(</span><span class="mi">589</span><span class="p">,</span> <span class="n">fmt_short</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="go">&#39;9m49s&#39;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>duration</strong> (<em>int</em>) &#8211; Duration in seconds.</li>
+<li><strong>fmt_short</strong> (<em>bool</em>) &#8211; Format as a short string (<cite>47s</cite> instead of <cite>47 seconds</cite>)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>

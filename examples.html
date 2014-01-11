@@ -103,7 +103,7 @@
 <h2>Example 4: Fetch data to memory instead of reading it from a file<a class="headerlink" href="#example-4-fetch-data-to-memory-instead-of-reading-it-from-a-file" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pySmartDL</span> <span class="kn">import</span> <span class="n">SmartDL</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://wiki.python.org/moin/Python2orPython3&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://wiki.python.org/moin/Python2orPython3&quot;</span> <span class="c"># it&#39;s also possible to pass unsafe and unicode characters in url</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="n">SmartDL</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">progress_bar</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="n">obj</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
