@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Python Smart Download Manager – pySmartDL &mdash; pySmartDL 1.1.1 documentation</title>
+    <title>Python Smart Download Manager – pySmartDL &mdash; pySmartDL 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.1.1',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="pySmartDL 1.1.1 documentation" href="#" />
+    <link rel="top" title="pySmartDL 1.2.0 documentation" href="#" />
     <link rel="next" title="Code Examples" href="examples.html" />
 	<script type='text/javascript' src='http://www.itayb.net/firestats/js/fs.js.php?site_id=6'></script>
 
@@ -41,7 +41,7 @@
         <li class="right" >
           <a href="examples.html" title="Code Examples"
              accesskey="N">next</a> |</li>
-        <li><a href="#">pySmartDL 1.1.1 documentation</a> &raquo;</li> 
+        <li><a href="#">pySmartDL 1.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -59,6 +59,7 @@
 <li>Pause/Unpause feature.</li>
 <li>Hash checking.</li>
 <li>Non-blocking, shows progress bar, download speed and eta.</li>
+<li>Python 3 Support</li>
 </ul>
 <div class="section" id="project-links">
 <h2>Project Links<a class="headerlink" href="#project-links" title="Permalink to this headline">¶</a></h2>
@@ -82,7 +83,7 @@
 
 <span class="n">obj</span> <span class="o">=</span> <span class="n">SmartDL</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
 <span class="n">obj</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="c"># [*] 0.23 / 0.37 MB @ 88.00KB/s [##########--------] [60%, 2s left]</span>
+<span class="c"># [*] 0.23 Mb / 0.37 Mb @ 88.00Kb/s [##########--------] [60%, 2s left]</span>
 
 <span class="n">path</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_dest</span><span class="p">()</span>
 </pre></div>
@@ -92,8 +93,9 @@
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>Python 2.6 or 2.7.</li>
-<li>The <a class="reference external" href="https://pypi.python.org/pypi/threadpool">threadpool</a> package.</li>
+<li>Python 2.6 or greater.</li>
+<li>Python 3.0 or greater.</li>
+<li>For versions before Python 3.2, the <a class="reference external" href="https://pypi.python.org/pypi/futures">futures backport</a> package is also required.</li>
 </ul>
 </div></blockquote>
 </div>
@@ -201,7 +203,7 @@
         <li class="right" >
           <a href="examples.html" title="Code Examples"
              >next</a> |</li>
-        <li><a href="#">pySmartDL 1.1.1 documentation</a> &raquo;</li> 
+        <li><a href="#">pySmartDL 1.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

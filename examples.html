@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Code Examples &mdash; pySmartDL 1.1.1 documentation</title>
+    <title>Code Examples &mdash; pySmartDL 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.1.1',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="pySmartDL 1.1.1 documentation" href="index.html" />
+    <link rel="top" title="pySmartDL 1.2.0 documentation" href="index.html" />
     <link rel="next" title="Documentation" href="code.html" />
     <link rel="prev" title="Python Smart Download Manager – pySmartDL" href="index.html" />
 	<script type='text/javascript' src='http://www.itayb.net/firestats/js/fs.js.php?site_id=6'></script>
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="index.html" title="Python Smart Download Manager – pySmartDL"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">pySmartDL 1.1.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">pySmartDL 1.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -93,7 +93,7 @@
 <span class="n">obj</span> <span class="o">=</span> <span class="n">SmartDL</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="n">progress_bar</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="n">obj</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-<span class="k">print</span> <span class="n">obj</span><span class="o">.</span><span class="n">isSuccessful</span><span class="p">()</span> <span class="c"># Returns True, even though the first link is not working.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">isSuccessful</span><span class="p">())</span> <span class="c"># Returns True, even though the first link is not working.</span>
 
 <span class="c"># Do something with obj.get_dest()</span>
 </pre></div>
@@ -123,26 +123,26 @@
 <span class="n">obj</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">blocking</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">isFinished</span><span class="p">():</span>
-        <span class="k">print</span> <span class="s">&quot;Speed: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_speed</span><span class="p">(</span><span class="n">human</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s">&quot;Already downloaded: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_dl_size</span><span class="p">(</span><span class="n">human</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s">&quot;Eta: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_eta</span><span class="p">(</span><span class="n">human</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s">&quot;Progress: </span><span class="si">%d%%</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get_progress</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s">&quot;Progress bar: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_progress_bar</span><span class="p">()</span>
-        <span class="k">print</span> <span class="s">&quot;Status: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_status</span><span class="p">()</span>
-        <span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="s">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span><span class="o">+</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">*</span><span class="mi">2</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Speed: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_speed</span><span class="p">(</span><span class="n">human</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Already downloaded: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_dl_size</span><span class="p">(</span><span class="n">human</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Eta: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_eta</span><span class="p">(</span><span class="n">human</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Progress: </span><span class="si">%d%%</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get_progress</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Progress bar: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_progress_bar</span><span class="p">())</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Status: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_status</span><span class="p">())</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="s">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span><span class="o">+</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">isSuccessful</span><span class="p">():</span>
-        <span class="k">print</span> <span class="s">&quot;downloaded file to &#39;</span><span class="si">%s</span><span class="s">&#39;&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_dest</span><span class="p">()</span>
-        <span class="k">print</span> <span class="s">&quot;download task took </span><span class="si">%s</span><span class="s">s&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_dl_time</span><span class="p">(</span><span class="n">human</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s">&quot;File hashes:&quot;</span>
-        <span class="k">print</span> <span class="s">&quot; * MD5: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_data_hash</span><span class="p">(</span><span class="s">&#39;md5&#39;</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s">&quot; * SHA1: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_data_hash</span><span class="p">(</span><span class="s">&#39;sha1&#39;</span><span class="p">)</span>
-        <span class="k">print</span> <span class="s">&quot; * SHA256: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_data_hash</span><span class="p">(</span><span class="s">&#39;sha256&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;downloaded file to &#39;</span><span class="si">%s</span><span class="s">&#39;&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_dest</span><span class="p">())</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;download task took </span><span class="si">%s</span><span class="s">s&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_dl_time</span><span class="p">(</span><span class="n">human</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;File hashes:&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot; * MD5: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_data_hash</span><span class="p">(</span><span class="s">&#39;md5&#39;</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot; * SHA1: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_data_hash</span><span class="p">(</span><span class="s">&#39;sha1&#39;</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot; * SHA256: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_data_hash</span><span class="p">(</span><span class="s">&#39;sha256&#39;</span><span class="p">))</span>
 <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s">&quot;There were some errors:&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;There were some errors:&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_errors</span><span class="p">():</span>
-                <span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 
 <span class="c"># Do something with obj.get_dest()</span>
 </pre></div>
@@ -164,7 +164,7 @@
         <span class="n">obj</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="c"># Do something with obj.get_dest()</span>
 <span class="k">except</span> <span class="n">HashFailedException</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s">&quot;Hash check failed!&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Hash check failed!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Example with passing <cite>blocking=False</cite> to <cite>obj.start()</cite>:</p>
@@ -182,12 +182,12 @@
 <span class="k">while</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">isFinished</span><span class="p">():</span>
         <span class="n">do_your_stuff</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">isSuccessful</span><span class="p">():</span>
-        <span class="k">print</span> <span class="s">&quot;Success!&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Success!&quot;</span><span class="p">)</span>
         <span class="c"># Do something with obj.get_dest()</span>
 <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s">&quot;Download failed with the following exceptions:&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Download failed with the following exceptions:&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_errors</span><span class="p">():</span>
-                <span class="k">print</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="nb">unicode</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -264,7 +264,7 @@
         <li class="right" >
           <a href="index.html" title="Python Smart Download Manager – pySmartDL"
              >previous</a> |</li>
-        <li><a href="index.html">pySmartDL 1.1.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">pySmartDL 1.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

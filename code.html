@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Documentation &mdash; pySmartDL 1.1.1 documentation</title>
+    <title>Documentation &mdash; pySmartDL 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.1.1',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="pySmartDL 1.1.1 documentation" href="index.html" />
+    <link rel="top" title="pySmartDL 1.2.0 documentation" href="index.html" />
     <link rel="next" title="Notes" href="notes.html" />
     <link rel="prev" title="Code Examples" href="examples.html" />
 	<script type='text/javascript' src='http://www.itayb.net/firestats/js/fs.js.php?site_id=6'></script>
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="examples.html" title="Code Examples"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">pySmartDL 1.1.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">pySmartDL 1.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -67,7 +67,7 @@
 
 <span class="n">obj</span> <span class="o">=</span> <span class="n">SmartDL</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
 <span class="n">obj</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="c"># [*] 0.23 / 0.37 MB @ 88.00KB/s [##########--------] [60%, 2s left]</span>
+<span class="c"># [*] 0.23 Mb / 0.37 Mb @ 88.00Kb/s [##########--------] [60%, 2s left]</span>
 
 <span class="n">path</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_dest</span><span class="p">()</span>
 </pre></div>
@@ -206,7 +206,7 @@ first 5 seconds of each download).</p>
 
 <dl class="method">
 <dt id="pySmartDL.SmartDL.get_progress_bar">
-<tt class="descname">get_progress_bar</tt><big>(</big><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_progress_bar" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_progress_bar</tt><big>(</big><em>length=20</em><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.get_progress_bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the current progress of the download as a string containing a progress bar.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -216,7 +216,9 @@ first 5 seconds of each download).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>length</strong> (<em>int</em>) &#8211; The length of the progress bar in chars. Default is 20.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
@@ -583,7 +585,7 @@ using the Range HTTP request header and the Accept-Ranges and Content-Range HTTP
 <dt id="pySmartDL.utils.get_random_useragent">
 <tt class="descclassname">pySmartDL.utils.</tt><tt class="descname">get_random_useragent</tt><big>(</big><big>)</big><a class="headerlink" href="#pySmartDL.utils.get_random_useragent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a random popular user-agent.
-Taken from <a class="reference external" href="http://techblog.willshouse.com/2012/01/03/most-common-user-agents/">here</a>, last updated on 01/01/2014.</p>
+Taken from <a class="reference external" href="http://techblog.willshouse.com/2012/01/03/most-common-user-agents/">here</a>, last updated on 01/02/2014.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -663,6 +665,11 @@ Taken from <a class="reference external" href="http://techblog.willshouse.com/20
 <dd><p>A dummy logger. You can call <cite>debug()</cite>, <cite>warning()</cite>, etc on this object, and nothing will happen.</p>
 </dd></dl>
 
+<dl class="class">
+<dt id="pySmartDL.utils.ManagedThreadPoolExecutor">
+<em class="property">class </em><tt class="descclassname">pySmartDL.utils.</tt><tt class="descname">ManagedThreadPoolExecutor</tt><big>(</big><em>max_workers</em><big>)</big><a class="headerlink" href="#pySmartDL.utils.ManagedThreadPoolExecutor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 </div>
 
@@ -735,7 +742,7 @@ Taken from <a class="reference external" href="http://techblog.willshouse.com/20
         <li class="right" >
           <a href="examples.html" title="Code Examples"
              >previous</a> |</li>
-        <li><a href="index.html">pySmartDL 1.1.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">pySmartDL 1.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
