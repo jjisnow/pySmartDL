@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Documentation &mdash; pySmartDL 1.2.0 documentation</title>
+    <title>Documentation &mdash; pySmartDL 1.2.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.0',
+        VERSION:     '1.2.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="pySmartDL 1.2.0 documentation" href="index.html" />
+    <link rel="top" title="pySmartDL 1.2.1 documentation" href="index.html" />
     <link rel="next" title="Notes" href="notes.html" />
     <link rel="prev" title="Code Examples" href="examples.html" />
 	<script type='text/javascript' src='http://www.itayb.net/firestats/js/fs.js.php?site_id=6'></script>
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="examples.html" title="Code Examples"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">pySmartDL 1.2.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">pySmartDL 1.2.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -100,7 +100,7 @@
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>The provided dest may be a folder or a full path name (including filename). The algorithm works as follows:</p>
+<p>The provided dest may be a folder or a full path name (including filename). The workflow is:</p>
 <ul class="last simple">
 <li>If the path exists, and it&#8217;s an existing folder, the file will be downloaded to there with the original filename.</li>
 <li>If the past does not exist, it will create the folders, if needed, and refer to the last section of the path as the filename.</li>
@@ -134,6 +134,23 @@ passing hash verification, <cite>HashFailedException</cite> Exception will be ra
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySmartDL.SmartDL.fetch_hash_sums">
+<tt class="descname">fetch_hash_sums</tt><big>(</big><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL.fetch_hash_sums" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will attempt to fetch UNIX hash sums files (<cite>SHA256SUMS</cite>, <cite>SHA1SUMS</cite> or <cite>MD5SUMS</cite> files in
+the same url directory).</p>
+<p>Calls <cite>self.add_hash_verification</cite> if successful. Returns if a matching hash was found.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p><em>New in 1.2.1</em></p>
 </dd></dl>
 
 <dl class="method">
@@ -742,7 +759,7 @@ Taken from <a class="reference external" href="http://techblog.willshouse.com/20
         <li class="right" >
           <a href="examples.html" title="Code Examples"
              >previous</a> |</li>
-        <li><a href="index.html">pySmartDL 1.2.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">pySmartDL 1.2.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
