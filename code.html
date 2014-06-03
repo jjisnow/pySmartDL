@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Documentation &mdash; pySmartDL 1.2.2 documentation</title>
+    <title>Documentation &mdash; pySmartDL 1.2.3 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.2',
+        VERSION:     '1.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="pySmartDL 1.2.2 documentation" href="index.html" />
+    <link rel="top" title="pySmartDL 1.2.3 documentation" href="index.html" />
     <link rel="next" title="Notes" href="notes.html" />
     <link rel="prev" title="Code Examples" href="examples.html" />
 	<script type='text/javascript' src='http://www.itayb.net/firestats/js/fs.js.php?site_id=6'></script>
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="examples.html" title="Code Examples"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">pySmartDL 1.2.2 documentation</a> &raquo;</li> 
+        <li><a href="index.html">pySmartDL 1.2.3 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -78,7 +78,7 @@
 <span id="pysmartdl-smartdl-main-class"></span><h2>pySmartDL.SmartDL (main class)<a class="headerlink" href="#module-pySmartDL" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="pySmartDL.SmartDL">
-<em class="property">class </em><tt class="descclassname">pySmartDL.</tt><tt class="descname">SmartDL</tt><big>(</big><em>urls</em>, <em>dest=None</em>, <em>progress_bar=True</em>, <em>logger=None</em>, <em>connect_default_logger=False</em><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">pySmartDL.</tt><tt class="descname">SmartDL</tt><big>(</big><em>urls</em>, <em>dest=None</em>, <em>progress_bar=True</em>, <em>fix_urls=True</em>, <em>logger=None</em>, <em>connect_default_logger=False</em><big>)</big><a class="headerlink" href="#pySmartDL.SmartDL" title="Permalink to this definition">¶</a></dt>
 <dd><p>The main SmartDL class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -87,7 +87,9 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>urls</strong> (<em>string or list of strings</em>) &#8211; Download url. It is possible to pass unsafe and unicode characters. You can also pass a list of urls, and those will be used as mirrors.</li>
 <li><strong>dest</strong> (<em>string</em>) &#8211; Destination path. Default is <cite>%TEMP%/pySmartDL/</cite>.</li>
-<li><strong>progress_bar</strong> (<em>bool</em>) &#8211; If True, prints a progress bar to the <a class="reference external" href="http://docs.python.org/2/library/sys.html#sys.stdout">stdout stream</a>. Default is <cite>True</cite>.</li>
+<li><strong>progress_bar</strong> (<em>bool
+:param fix_urls: If true, attempts to fix urls with unsafe characters.
+:type fix_urls: bool</em>) &#8211; If True, prints a progress bar to the <a class="reference external" href="http://docs.python.org/2/library/sys.html#sys.stdout">stdout stream</a>. Default is <cite>True</cite>.</li>
 <li><strong>logger</strong> (<cite>logging.Logger</cite> instance) &#8211; An optional logger.</li>
 <li><strong>connect_default_logger</strong> (<em>bool</em>) &#8211; If true, connects a default logger to the class.</li>
 </ul>
@@ -777,7 +779,7 @@ Taken from <a class="reference external" href="http://techblog.willshouse.com/20
         <li class="right" >
           <a href="examples.html" title="Code Examples"
              >previous</a> |</li>
-        <li><a href="index.html">pySmartDL 1.2.2 documentation</a> &raquo;</li> 
+        <li><a href="index.html">pySmartDL 1.2.3 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
