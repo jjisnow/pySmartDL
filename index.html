@@ -6,30 +6,30 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Python Smart Download Manager – pySmartDL &mdash; pySmartDL 1.2.4 documentation</title>
+    <title>Python Smart Download Manager – pySmartDL &#8212; pySmartDL 1.2.5 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.4',
+        VERSION:     '1.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="pySmartDL 1.2.4 documentation" href="#" />
-    <link rel="next" title="Code Examples" href="examples.html" />
-	<script type='text/javascript' src='http://www.itayb.net/firestats/js/fs.js.php?site_id=6'></script>
-
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code Examples" href="examples.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -41,18 +41,18 @@
         <li class="right" >
           <a href="examples.html" title="Code Examples"
              accesskey="N">next</a> |</li>
-        <li><a href="#">pySmartDL 1.2.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">pySmartDL 1.2.5 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="python-smart-download-manager-pysmartdl">
 <h1>Python Smart Download Manager &#8211; pySmartDL<a class="headerlink" href="#python-smart-download-manager-pysmartdl" title="Permalink to this headline">¶</a></h1>
-<p><tt class="docutils literal"><span class="pre">pySmartDL</span></tt> strives to be a full-pleged smart download manager for Python. Main features:</p>
+<p><code class="docutils literal"><span class="pre">pySmartDL</span></code> strives to be a full-pleged smart download manager for Python. Main features:</p>
 <ul class="simple">
 <li>Built-in download acceleration (with the <a class="reference external" href="http://stackoverflow.com/questions/93642/how-do-download-accelerators-work">multipart downloading technique</a>).</li>
 <li>Mirrors support.</li>
@@ -75,15 +75,15 @@
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <p>Download is as simple as creating an instance and launching it:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">pySmartDL</span> <span class="kn">import</span> <span class="n">SmartDL</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pySmartDL</span> <span class="k">import</span> <span class="n">SmartDL</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://mirror.ufs.ac.za/7zip/9.20/7za920.zip&quot;</span>
-<span class="n">dest</span> <span class="o">=</span> <span class="s">&quot;C:</span><span class="se">\\</span><span class="s">Downloads</span><span class="se">\\</span><span class="s">&quot;</span> <span class="c"># or &#39;~/Downloads/&#39; on linux</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://mirror.ufs.ac.za/7zip/9.20/7za920.zip&quot;</span>
+<span class="n">dest</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Downloads</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="c1"># or &#39;~/Downloads/&#39; on linux</span>
 
 <span class="n">obj</span> <span class="o">=</span> <span class="n">SmartDL</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
 <span class="n">obj</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="c"># [*] 0.23 Mb / 0.37 Mb @ 88.00Kb/s [##########--------] [60%, 2s left]</span>
+<span class="c1"># [*] 0.23 Mb / 0.37 Mb @ 88.00Kb/s [##########--------] [60%, 2s left]</span>
 
 <span class="n">path</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_dest</span><span class="p">()</span>
 </pre></div>
@@ -131,9 +131,9 @@
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
-<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
 </div>
 
@@ -141,17 +141,8 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-			<p class="ads"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- itaybb.github.io -->
-			<ins class="adsbygoogle"
-				 style="display:inline-block;width:125px;height:125px"
-				 data-ad-client="ca-pub-5204047182031441"
-				 data-ad-slot="3940778637"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script></p>
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Python Smart Download Manager &#8211; pySmartDL</a><ul>
@@ -160,38 +151,35 @@
 <li><a class="reference internal" href="#requirements">Requirements</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#documentation">Documentation</a><ul>
-</ul>
-</li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
   <h4>Next topic</h4>
   <p class="topless"><a href="examples.html"
                         title="next chapter">Code Examples</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -203,12 +191,12 @@
         <li class="right" >
           <a href="examples.html" title="Code Examples"
              >next</a> |</li>
-        <li><a href="#">pySmartDL 1.2.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">pySmartDL 1.2.5 documentation</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, Itay Brandes.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2017, Itay Brandes.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>
