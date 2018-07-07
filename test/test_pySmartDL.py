@@ -9,7 +9,7 @@ import json
 import unittest
 
 sys.path.append('..')
-import pySmartDL
+import pySmartDL.pySmartDL as pySmartDL
 
 #
 # Test code

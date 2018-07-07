@@ -218,3 +218,5 @@ pip-log.txt
 docs/_build
 docs/Makefile
 *.bat
+
+.idea/*

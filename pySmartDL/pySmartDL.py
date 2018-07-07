@@ -1,6 +1,6 @@
 import os
 import sys
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import copy
 import threading
 import time
@@ -9,12 +9,12 @@ import tempfile
 import base64
 import hashlib
 import logging
-from urlparse import urlparse
-from StringIO import StringIO
+from urllib.parse import urlparse
+from io import StringIO
 import multiprocessing.dummy as multiprocessing
 from ctypes import c_int
 
-import utils
+from . import utils
 
 __all__ = ['SmartDL', 'utils']
 __version_mjaor__ = 1
@@ -75,12 +75,12 @@ class SmartDL:
     def __init__(self, urls, dest=None, progress_bar=True, fix_urls=True, threads=5, logger=None, connect_default_logger=False):
         global DEFAULT_LOGGER_CREATED
         
-        self.mirrors = [urls] if isinstance(urls, basestring) else urls
+        self.mirrors = [urls] if isinstance(urls, str) else urls
         if fix_urls:
             self.mirrors = [utils.url_fix(x) for x in self.mirrors]
         self.url = self.mirrors.pop(0)
         
-        fn = urllib2.unquote(os.path.basename(urlparse(self.url).path))
+        fn = urllib.parse.unquote(os.path.basename(urlparse(self.url).path))
         if sys.version_info < (3, 0):
             fn = fn.decode('utf-8')  # required only on python 2
         self.dest = dest or os.path.join(tempfile.gettempdir(), 'pySmartDL', fn)
@@ -198,7 +198,7 @@ class SmartDL:
         for filename in default_sums_filenames:
             try:
                 sums_url = "%s/%s" % (folder, filename)
-                obj = urllib2.urlopen(sums_url)
+                obj = urllib.request.urlopen(sums_url)
                 data = obj.read().split('\n')
                 obj.close()
                 
@@ -210,7 +210,7 @@ class SmartDL:
                         self.add_hash_verification(algo, hash)
                         return
                 
-            except urllib2.HTTPError:
+            except urllib.error.HTTPError:
                 continue
         
     def start(self, blocking=None):
@@ -245,18 +245,18 @@ class SmartDL:
                 return
         
         self.logger.info("Downloading '%s' to '%s'..." % (self.url, self.dest))
-        req = urllib2.Request(self.url, headers=self.headers)
+        req = urllib.request.Request(self.url, headers=self.headers)
         try:
-            urlObj = urllib2.urlopen(req, timeout=self.timeout)
-        except (urllib2.HTTPError, urllib2.URLError), e:
+            urlObj = urllib.request.urlopen(req, timeout=self.timeout)
+        except (urllib.error.HTTPError, urllib.error.URLError) as e:
             self.errors.append(e)
             if self.mirrors:
-                self.logger.info("%s. Trying next mirror..." % unicode(e))
+                self.logger.info("%s. Trying next mirror..." % str(e))
                 self.url = self.mirrors.pop(0)
                 self.start(blocking)
                 return
             else:
-                self.logger.warning(unicode(e))
+                self.logger.warning(str(e))
                 self.errors.append(e)
                 self._failed = True
                 self.status = "finished"
@@ -315,7 +315,7 @@ class SmartDL:
             s = 'The maximum retry attempts reached'
             if eStr:
                 s += " (%s)" % eStr
-            self.errors.append(urllib2.HTTPError(self.url, "0", s, {}, StringIO()))
+            self.errors.append(urllib.error.HTTPError(self.url, "0", s, {}, StringIO()))
             self._failed = True
             
     def try_next_mirror(self, e=None):
@@ -590,7 +590,7 @@ class ControlThread(threading.Thread):
                 else:
                     status = r"[*] %s / ??? MB @ %s/s   " % (utils.sizeof_human(self.shared_var.value), utils.sizeof_human(self.dl_speed))
                 status = status + chr(8)*(len(status)+1)
-                print status,
+                print(status, end=' ')
             
             time.sleep(0.1)
             
@@ -600,9 +600,9 @@ class ControlThread(threading.Thread):
             
         if self.progress_bar:
             if self.obj.filesize:
-                print r"[*] %s / %s @ %s/s %s [100%%, 0s left]    " % (utils.sizeof_human(self.obj.filesize), utils.sizeof_human(self.obj.filesize), utils.sizeof_human(self.dl_speed), utils.progress_bar(1.0))
+                print(r"[*] %s / %s @ %s/s %s [100%%, 0s left]    " % (utils.sizeof_human(self.obj.filesize), utils.sizeof_human(self.obj.filesize), utils.sizeof_human(self.dl_speed), utils.progress_bar(1.0)))
             else:
-                print r"[*] %s / %s @ %s/s    " % (utils.sizeof_human(self.shared_var.value), utils.sizeof_human(self.shared_var.value), utils.sizeof_human(self.dl_speed))
+                print(r"[*] %s / %s @ %s/s    " % (utils.sizeof_human(self.shared_var.value), utils.sizeof_human(self.shared_var.value), utils.sizeof_human(self.dl_speed)))
                 
         t2 = time.time()
         self.dl_time = float(t2-t1)
@@ -676,8 +676,8 @@ def post_threadpool_actions(pool, args, expected_filesize, SmartDL_obj):
         time.sleep(0.1)
         
     if pool.get_exceptions():
-        SmartDL_obj.logger.warning(unicode(pool.get_exceptions()[0]))
-        SmartDL_obj.retry(unicode(pool.get_exceptions()[0]))
+        SmartDL_obj.logger.warning(str(pool.get_exceptions()[0]))
+        SmartDL_obj.retry(str(pool.get_exceptions()[0]))
        
         
     if SmartDL_obj._killed:
@@ -740,10 +740,10 @@ def download(url, dest, startByte=0, endByte=None, headers=None, timeout=4, shar
         headers['Range'] = 'bytes=%d-%d' % (startByte, endByte)
     
     logger.info("Downloading '%s' to '%s'..." % (url, dest))
-    req = urllib2.Request(url, headers=headers)
+    req = urllib.request.Request(url, headers=headers)
     try:
-        urlObj = urllib2.urlopen(req, timeout=timeout)
-    except urllib2.HTTPError, e:
+        urlObj = urllib.request.urlopen(req, timeout=timeout)
+    except urllib.error.HTTPError as e:
         if e.code == 416:
             '''
             HTTP 416 Error: Requested Range Not Satisfiable. Happens when we ask
@@ -797,8 +797,8 @@ def download(url, dest, startByte=0, endByte=None, headers=None, timeout=4, shar
                 
             try:
                 buff = urlObj.read(block_sz)
-            except Exception, e:
-                logger.error(unicode(e))
+            except Exception as e:
+                logger.error(str(e))
                 if shared_var:
                     shared_var.value -= filesize_dl
                 raise
