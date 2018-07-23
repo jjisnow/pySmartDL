@@ -43,7 +43,7 @@ class TestSmartDL(unittest.TestCase):
             self.assertEqual(data, 'PK')
     
     def test_mirrors(self):
-        urls = ["http://totally_fake_website/7za.zip" ,"http://mirror.ufs.ac.za/7zip/9.20/7za920.zip"]
+        urls = ["http://totally_fake_website/7za.zip" ,"https://sourceforge.net/projects/sevenzip/files/7-Zip/18.05/7z1805.exe"]
         obj = pySmartDL.SmartDL(urls, dest=self.dl_dir, progress_bar=False)
         obj.start()
         

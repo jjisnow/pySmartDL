@@ -219,4 +219,7 @@ docs/_build
 docs/Makefile
 *.bat
 
-.idea/*
+.idea/
+.gitignore
+
+
